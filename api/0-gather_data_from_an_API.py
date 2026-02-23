@@ -8,7 +8,8 @@ if __name__ == "__main__":
     base_url = "https://jsonplaceholder.typicode.com"
 
     user = requests.get(f"{base_url}/users/{employee_id}").json()
-    todos = requests.get(f"{base_url}/todos", params={"userId": employee_id}).json()
+    todos = requests.get(
+        f"{base_url}/todos", params={"userId": employee_id}).json()
 
     name = user.get("name")
     done = [t for t in todos if t.get("completed")]
